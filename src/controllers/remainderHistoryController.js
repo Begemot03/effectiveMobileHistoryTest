@@ -3,7 +3,7 @@ import RemainderHistory from "../models/remainderHistory.js";
 import BaseController from "./baseController.js";
 
 export default class RemainderHistoryController extends BaseController {
-	static async all() {
+	static async all(req, res) {
 		try {
 			const remainderHistoryRepository =
 				RemainderHistoryController.getRepository(RemainderHistorySchema);
@@ -27,10 +27,10 @@ export default class RemainderHistoryController extends BaseController {
 		}
 	}
 
-	static async create() {
+	static async create(req, res) {
 		try {
 			const remainderHistoryRepository =
-				RemainderHistoryController.getRepository(ProductHistorySchema);
+				RemainderHistoryController.getRepository(RemainderHistorySchema);
 
 			const history = RemainderHistoryController.getBodyToCreate(req.body);
 
@@ -43,7 +43,7 @@ export default class RemainderHistoryController extends BaseController {
 			await remainderHistoryRepository.save(newHistory);
 
 			return res.status(201).json({ data: newHistory });
-		} catch (e) {
+		} catch (error) {
 			RemainderHistoryController.handleError(
 				res,
 				"Error on create history",
@@ -78,7 +78,7 @@ export default class RemainderHistoryController extends BaseController {
 	static getQueryFilters(query) {
 		const filters = {};
 
-        if (query.plu) {
+		if (query.plu) {
 			filters.plu = query.plu;
 		}
 
@@ -90,7 +90,7 @@ export default class RemainderHistoryController extends BaseController {
 			filters.product_id = parseInt(query.product_id);
 		}
 
-        if (query.shop_id && isNaN(parseInt(query.shop_id))) {
+		if (query.shop_id && isNaN(parseInt(query.shop_id))) {
 			filters.shop_id = parseInt(query.shop_id);
 		}
 

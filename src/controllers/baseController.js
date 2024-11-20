@@ -5,7 +5,7 @@ export default class BaseController {
 		console.error(message, error);
 		return res.status(statusCode).json({ message, error });
 	}
-    
+
 	static getRepository(entitySchema) {
 		return AppDataSource.getRepository(entitySchema);
 	}

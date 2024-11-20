@@ -43,7 +43,7 @@ export default class ProductHistoryController extends BaseController {
 			await productHistoryRepository.save(newHistory);
 
 			return res.status(201).json({ data: newHistory });
-		} catch (e) {
+		} catch (error) {
 			ProductHistoryController.handleError(
 				res,
 				"Error on create history",
