@@ -1,6 +1,6 @@
 import { DataSource } from "typeorm";
 import "dotenv/config";
-import ProductHistorySchema from "./entities/ProductHistorySchema";
+import ProductHistorySchema from "./entities/ProductHistorySchema.js";
 import RemainderHistorySchema from "./entities/RemainderHistorySchema.js";
 
 const DB_HOST = process.env.DB_HOST;

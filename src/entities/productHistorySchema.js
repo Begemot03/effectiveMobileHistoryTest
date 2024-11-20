@@ -1,5 +1,5 @@
 import { EntitySchema } from "typeorm";
-import ProductHistory from "../models/productHistory";
+import ProductHistory from "../models/productHistory.js";
 
 export default new EntitySchema({
 	name: "ProductHistory",

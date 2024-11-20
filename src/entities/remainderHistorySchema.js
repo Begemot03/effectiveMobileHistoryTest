@@ -1,5 +1,5 @@
 import { EntitySchema } from "typeorm";
-import RemainderHistory from "../models/remainderHistory";
+import RemainderHistory from "../models/remainderHistory.js";
 
 export default new EntitySchema({
 	name: "RemainderHistory",
