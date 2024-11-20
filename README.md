@@ -11,7 +11,7 @@ npm run dev
 
 # Ендпоинты
 
-## Сервис Product History
+## Ендпоинт Product History
 
 ```
 GET /api/product
@@ -35,7 +35,7 @@ plu
 action
 ```
 
-## Сервис Remainder History
+## Ендпоинт Remainder History
 
 ```
 GET /api/remainder
